@@ -21,7 +21,6 @@ GET    -> /api/mensajes
 PUT    -> /api/mensajes/{codigo}
 DELETE -> /api/mensajes/{nombre}
 
-
 SALAS
 
 GET    -> /api/salas
