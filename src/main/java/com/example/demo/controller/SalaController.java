@@ -43,9 +43,6 @@ public class SalaController {
 	}
 	@GetMapping("/salas/{juego}")
 	public List<Sala> salaXJuego(@PathVariable(name="juego") String juego) {
-		
-		
-		
 		return salaServiceImpl.listarSalasXJuego(juego);
 	}
 	
