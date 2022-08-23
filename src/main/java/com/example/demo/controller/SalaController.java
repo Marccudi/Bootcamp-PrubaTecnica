@@ -31,16 +31,7 @@ public class SalaController {
 		return salaServiceImpl.guardarSala(sala);
 	}
 	
-	@GetMapping("/salas/{codigo}")
-	public Sala salaXID(@PathVariable(name="codigo") int codigo) {
-		
-		Sala sala_xid= new Sala();
-		
-		sala_xid=salaServiceImpl.salaXID(codigo);
-		
-		
-		return sala_xid;
-	}
+	
 	@GetMapping("/salas/{juego}")
 	public List<Sala> salaXJuego(@PathVariable(name="juego") String juego) {
 		return salaServiceImpl.listarSalasXJuego(juego);
