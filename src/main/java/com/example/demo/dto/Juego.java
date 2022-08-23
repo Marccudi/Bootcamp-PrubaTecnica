@@ -18,9 +18,6 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 @Table(name="juegos")
 public class Juego {
 	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private int id;
-	@Column
 	private String nombre;
 	
 	@OneToMany
@@ -29,14 +26,11 @@ public class Juego {
 
 	public Juego() {
 	}
-	public Juego(int id, String nombre, List<Sala> sala) {
-		this.id = id;
+	public Juego(String nombre, List<Sala> sala) {
 		this.nombre = nombre;
 		this.sala = sala;
 	}
-	public int getId() {
-		return id;
-	}
+
 	public String getNombre() {
 		return nombre;
 	}
@@ -45,9 +39,7 @@ public class Juego {
 	public List<Sala> getSala() {
 		return sala;
 	}
-	public void setId(int id) {
-		this.id = id;
-	}
+
 	public void setNombre(String nombre) {
 		this.nombre = nombre;
 	}
@@ -56,7 +48,7 @@ public class Juego {
 	}
 	@Override
 	public String toString() {
-		return "Juego [id=" + id + ", nombre=" + nombre + ", sala=" + sala + "]";
+		return "Juego [nombre=" + nombre + ", sala=" + sala + "]";
 	}
 	
 	

@@ -22,7 +22,7 @@ public class Usuario {
 	private int id;
 	@Column
 	private String username;
-	@Column
+	@Column(name="pass")
 	private String password;
 	@Column(name="steam_user")
 	private String steamUser;
@@ -30,20 +30,15 @@ public class Usuario {
 	@OneToMany
 	@JoinColumn(name = "id")
 	private List<Mensaje> mensaje;
-	
-	@OneToMany
-	@JoinColumn(name = "id")
-	private List<Sala> sala;
 
 	public Usuario() {
 	}
-	public Usuario(int id, String username, String password, String steamUser, List<Mensaje> mensaje, List<Sala> sala) {
+	public Usuario(int id, String username, String password, String steamUser, List<Mensaje> mensaje) {
 		this.id = id;
 		this.username = username;
 		this.password = password;
 		this.steamUser = steamUser;
 		this.mensaje = mensaje;
-		this.sala = sala;
 	}
 	public int getId() {
 		return id;
@@ -62,11 +57,7 @@ public class Usuario {
 	public List<Mensaje> getMensaje() {
 		return mensaje;
 	}
-	@JsonIgnore
-	@OneToMany(fetch = FetchType.LAZY, mappedBy = "sala")
-	public List<Sala> getSala() {
-		return sala;
-	}
+	
 	public void setId(int id) {
 		this.id = id;
 	}
@@ -82,13 +73,11 @@ public class Usuario {
 	public void setMensaje(List<Mensaje> mensaje) {
 		this.mensaje = mensaje;
 	}
-	public void setSala(List<Sala> sala) {
-		this.sala = sala;
-	}
+	
 	@Override
 	public String toString() {
 		return "Usuario [id=" + id + ", username=" + username + ", password=" + password + ", steamUser=" + steamUser
-				+ ", mensaje=" + mensaje + ", sala=" + sala + "]";
+				+ ", mensaje=" + mensaje + "]";
 	}
 
 	

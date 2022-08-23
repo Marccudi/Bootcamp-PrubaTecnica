@@ -16,7 +16,7 @@ public class Mensaje {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
 	@Column
-	private String nombre;
+	private String mensaje;
 	@Column
 	private String fecha;
 
@@ -30,9 +30,9 @@ public class Mensaje {
 
 	public Mensaje() {
 	}
-	public Mensaje(int id, String nombre, String fecha, Usuario usuario, Sala sala) {
+	public Mensaje(int id, String mensaje, String fecha, Usuario usuario, Sala sala) {
 		this.id = id;
-		this.nombre = nombre;
+		this.mensaje = mensaje;
 		this.fecha = fecha;
 		this.usuario = usuario;
 		this.sala = sala;
@@ -40,8 +40,8 @@ public class Mensaje {
 	public int getId() {
 		return id;
 	}
-	public String getNombre() {
-		return nombre;
+	public String getMensaje() {
+		return mensaje;
 	}
 	public String getFecha() {
 		return fecha;
@@ -55,8 +55,8 @@ public class Mensaje {
 	public void setId(int id) {
 		this.id = id;
 	}
-	public void setNombre(String nombre) {
-		this.nombre = nombre;
+	public void setMensaje(String mensaje) {
+		this.mensaje = mensaje;
 	}
 	public void setFecha(String fecha) {
 		this.fecha = fecha;
@@ -69,7 +69,7 @@ public class Mensaje {
 	}
 	@Override
 	public String toString() {
-		return "Mensaje [id=" + id + ", nombre=" + nombre + ", fecha=" + fecha + ", usuario=" + usuario + ", sala="
+		return "Mensaje [id=" + id + ", mensaje=" + mensaje + ", fecha=" + fecha + ", usuario=" + usuario + ", sala="
 				+ sala + "]";
 	}
 
