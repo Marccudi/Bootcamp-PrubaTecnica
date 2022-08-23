@@ -44,21 +44,7 @@ public class JuegoController {
 	}
 
 	
-	@PutMapping("/juegos/{codigo}")
-	public Juego actualizarJuego(@PathVariable(name="codigo")String codigo,@RequestBody Juego juego) {
-		
-		Juego juego_seleccionado= new Juego();
-		Juego juego_actualizado= new Juego();
-		
-		juego_seleccionado= juegoServiceImpl.juegoXID(codigo);
-		
-		juego_seleccionado.setNombre(juego.getNombre());
-		
-		juego_actualizado = juegoServiceImpl.actualizarJuego(juego_seleccionado);
-		
-		
-		return juego_actualizado;
-	}
+	
 	
 	@DeleteMapping("/juegos/{codigo}")
 	public void eliminarJuego(@PathVariable(name="codigo")String codigo) {

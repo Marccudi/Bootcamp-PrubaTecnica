@@ -1,5 +1,6 @@
 package com.example.demo.controller;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.example.demo.dto.Juego;
 import com.example.demo.dto.Sala;
 import com.example.demo.service.SalaServiceImpl;
 
@@ -21,10 +23,7 @@ public class SalaController {
 	@Autowired
 	SalaServiceImpl salaServiceImpl;
 	
-	@GetMapping("/salas")
-	public List<Sala> listarSalas(){
-		return salaServiceImpl.listarSalas();
-	}
+
 	
 	@PostMapping("/salas")
 	public Sala salvarSala(@RequestBody Sala sala) {
@@ -41,6 +40,13 @@ public class SalaController {
 		
 		
 		return sala_xid;
+	}
+	@GetMapping("/salas/{juego}")
+	public List<Sala> salaXJuego(@PathVariable(name="juego") String juego) {
+		
+		
+		
+		return salaServiceImpl.listarSalasXJuego(juego);
 	}
 	
 	@PutMapping("/salas/{codigo}")

@@ -1,5 +1,6 @@
 package com.example.demo.service;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -43,5 +44,23 @@ public class SalaServiceImpl {
 		salaDAO.deleteById(id);
 
 	}
+	
+	public List<Sala> listarSalasXJuego(String juego) {
+		List<Sala> finale = new ArrayList<>();
+		List<Sala> a = new ArrayList<>();
+		String nombre="";
+		for (Sala sala : a) {
+			nombre = sala.getJuego().getNombre();
+			if (nombre == juego) {
+				finale.add(sala);
+			}
+		}
+		
+		
+
+		
+		return finale;
+	}
+
 
 }

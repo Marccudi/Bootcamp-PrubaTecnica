@@ -24,27 +24,13 @@ public class MensajeController {
 	@Autowired
 	MensajeServiceImpl mensajeServiceImpl;
 	
-	@GetMapping("/mensajes")
-	public List<Mensaje> listarMensajes(){
-		return mensajeServiceImpl.listarMensajes();
-	}
-	
 	@PostMapping("/mensajes")
 	public Mensaje salvarMensaje(@RequestBody Mensaje mensaje) {
 		
 		return mensajeServiceImpl.guardarMensaje(mensaje);
 	}
 	
-	@GetMapping("/mensajes/{codigo}")
-	public Mensaje mensajeXID(@PathVariable(name="codigo") int codigo) {
-		
-		Mensaje mensaje_xid= new Mensaje();
-		
-		mensaje_xid=mensajeServiceImpl.mensajeXID(codigo);
-		
-		
-		return mensaje_xid;
-	}
+	
 	
 	@PutMapping("/mensajes/{codigo}")
 	public Mensaje actualizarMensaje(@PathVariable(name="codigo")int codigo,@RequestBody Mensaje mensaje) {
