@@ -10,30 +10,30 @@ https://bootcamp-prueba-tecnica.herokuapp.com/
 ````
 JUEGOS
 
-GET &nbsp; /api/juegos
-&nbsp; /api/juegos/{nombre}
-POST &nbsp; /api/juegos
-DELETE &nbsp;/api/juegos/{nombre}
+GET    -> /api/juegos
+       -> /api/juegos/{nombre}
+POST   -> /api/juegos
+DELETE -> /api/juegos/{nombre}
 
 MENSAJES
 
-GET &nbsp; /api/mensajes
-PUT &nbsp; /api/mensajes/{codigo}
-DELETE &nbsp;/api/mensajes/{nombre}
+GET    -> /api/mensajes
+PUT    -> /api/mensajes/{codigo}
+DELETE -> /api/mensajes/{nombre}
 
 
 SALAS
 
-GET &ebsp; /api/salas
-&nbsp; /api/salas/{NombreJuego}
-POST &nbsp; /api/salas
-PUT &nbsp; /api/salas/{codigo}
-DELETE &nbsp;/api/salas/{codigo}
+GET    -> /api/salas
+       -> /api/salas/{NombreJuego}
+POST   -> /api/salas
+PUT    -> /api/salas/{codigo}
+DELETE -> /api/salas/{codigo}
 
 USUARIOS
 
-GET &nbsp; /api/usuarios/{id}
-POST &nbsp; /api/usuarios
-PUT &nbsp; /api/usuarios/{codigo}
-DELETE &nbsp;/api/usuarios/{codigo}
+GET    -> /api/usuarios/{id}
+POST   -> /api/usuarios
+PUT    -> /api/usuarios/{codigo}
+DELETE -> /api/usuarios/{codigo}
 ````
